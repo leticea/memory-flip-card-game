@@ -140,22 +140,22 @@ p {
 .details button {
   cursor: pointer;
   font-size: 14px;
-  color: #673AB7;
+  color: #673ab7;
   border-radius: 4px;
   padding: 4px 11px;
   background: #fff;
-  border: 2px solid #673AB7;
+  border: 2px solid #673ab7;
   transition: 0.3s ease;
 }
 
 .details button:hover {
   color: #fff;
-  background: #673AB7;
+  background: #673ab7;
 }
 
 ::selection {
   color: #fff;
-  background: #673AB7;
+  background: #673ab7;
 }
 
 @media screen and (max-width: 700px) {
@@ -200,6 +200,6 @@ p {
     padding: 5px 10px;
     border: none;
     color: #fff;
-    background: #673AB7;
+    background: #673ab7;
   }
 }
