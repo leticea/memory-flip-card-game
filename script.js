@@ -19,7 +19,7 @@ function initTimer() {
   timeTag.innerText = timeLeft;
 }
 
-function flipCard({target: clickedCard}) {
+function flipCard({ target: clickedCard }) {
   if (!isPlaying) {
     isPlaying = true;
     timer = setInterval(initTimer, 1000);
@@ -29,11 +29,30 @@ function flipCard({target: clickedCard}) {
     flipsTag.innerText = flips;
     clickedCard.classList.add("flip");
     if (!cardOne) {
-      return cardOne = clickedCard;
+      return (cardOne = clickedCard);
     }
     cardTwo = clickedCard;
     disableDeck = true;
     let cardOneIcon = cardOne.querySelector(".back-view i").classList.value;
     cardTwoIcon = cardTwo.querySelector(".back-view i").classList.value;
+    matchCards(cardOneIcon, cardTwoIcon);
   }
+}
+
+function matchCards(icon1, icon2) {
+  if (icon1 === icon2) {
+    matchedCards++;
+    if (matchedCards == 6 && timeLeft > 0) {
+      return clearInterval(timer);
+    }
+    cardOne.removeEventListener("click", flipCard);
+    cardTwo.removeEventListener("click", flipCard);
+    cardOne = cardTwo = "";
+    return (disableDeck = false);
+  }
+
+  setTimeout(() => {
+    cardOne.classList.add("shake");
+    cardTwo.classList.add("shake");
+  }, 400);
 }
