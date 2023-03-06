@@ -88,7 +88,7 @@ function shuffleCards() {
     "bxl-youtube",
   ];
 
-  arr.sortC(() => (Math.random() > 0.5 ? 1 : -1));
+  arr.sort(() => (Math.random() > 0.5 ? 1 : -1));
 
   cards.forEach((card, index) => {
     card.classList.remove("flip");
@@ -103,3 +103,7 @@ function shuffleCards() {
 shuffleCards();
 
 refreshBtn.addEventListener("click", shuffleCards);
+
+cards.forEach((card) => {
+  card.addEventListener("click", flipCard);
+});
