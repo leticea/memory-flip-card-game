@@ -73,5 +73,33 @@ function shuffleCards() {
   flipsTag.innerText = flips;
   disableDeck = isPlaying = false;
 
-  
+  let arr = [
+    "bxl-tiktok",
+    "bxl-instagram-alt",
+    "bxl-facebook-circle",
+    "bxl-twitter",
+    "bxl-whatsapp",
+    "bxl-youtube",
+    "bxl-tiktok",
+    "bxl-instagram-alt",
+    "bxl-facebook-circle",
+    "bxl-twitter",
+    "bxl-whatsapp",
+    "bxl-youtube",
+  ];
+
+  arr.sortC(() => (Math.random() > 0.5 ? 1 : -1));
+
+  cards.forEach((card, index) => {
+    card.classList.remove("flip");
+    let iconTag = card.querySelector(".back-view i");
+    setTimeout(() => {
+      iconTag.classList.value = `bx ${arr[index]}`;
+    }, 500);
+    card.addEventListener("click", flipCard);
+  });
 }
+
+shuffleCards();
+
+refreshBtn.addEventListener("click", shuffleCards);
