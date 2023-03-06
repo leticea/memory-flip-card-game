@@ -55,4 +55,23 @@ function matchCards(icon1, icon2) {
     cardOne.classList.add("shake");
     cardTwo.classList.add("shake");
   }, 400);
+
+  setTimeout(() => {
+    cardOne.classList.remove("shake", "flip");
+    cardTwo.classList.remove("shake", "flip");
+    cardOne = cardTwo = "";
+    disableDeck = false;
+  }, 1200);
+}
+
+function shuffleCards() {
+  timeLeft = maxTime;
+  flips = matchedCards = 0;
+  cardOne = cardTwo = "";
+  clearInterval(timer);
+  timeTag.innerText = timeLeft;
+  flipsTag.innerText = flips;
+  disableDeck = isPlaying = false;
+
+  
 }
