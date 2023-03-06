@@ -39,3 +39,17 @@ body {
   justify-content: space-between;
 }
 
+.cards .card {
+  cursor: pointer;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  height: calc(100% / 4 - 10px);
+  width: calc(100% / 4 - 10px);
+}
+
+.card.shake {
+  animation: shake 0.35s ease-in-out;
+}
+
+
